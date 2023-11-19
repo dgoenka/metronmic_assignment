@@ -1,0 +1,40 @@
+.reactRoot {
+  width: 100vw;
+  height: 100vh;
+}
+.headerRoot {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.menuRoot {
+  min-width: 100px;
+  max-width: 20%;
+  @media screen and (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    height: min-content;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  background-color: white;
+  @media screen and (min-width: 768px) {
+    flex: 1;
+  }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    min-width: 100vw;
+    max-width: 100vw;
+    width: 100vw;
+    min-height: 100%;
+    height: auto;
+    flex: 1;
+  }
+}

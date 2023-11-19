@@ -51,10 +51,19 @@ const Login: React.FC<LoginProps> = () => {
 
   return (
     <>
-      <div className="container row w-100 h-100 d-flex align-items-center justify-content-center">
+      <div
+        className="flex-fill d-flex align-items-center justify-content-center"
+        style={{
+          boxSizing: "border-box",
+        }}
+      >
         <div
           className="row d-flex row justify-content-center m-0"
-          style={{ minWidth: "200px", maxWidth: "60%" }}
+          style={{
+            minWidth: "200px",
+            maxWidth: "60%",
+            boxSizing: "border-box",
+          }}
         >
           <Title>Login</Title>
           <form className="needs-validation" onSubmit={handleSubmit(onSubmit)}>

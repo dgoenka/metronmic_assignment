@@ -11,6 +11,8 @@ const Add: React.FC<AddProps> = () => {
     <div
       style={{
         width: "100%",
+        maxWidth: "100%",
+        minWidth: "100%",
         height: "auto",
         minHeight: "100%",
         background: "white",
@@ -19,6 +21,7 @@ const Add: React.FC<AddProps> = () => {
         display: "flex",
         flexDirection: "column",
         marginBottom: "10px",
+        boxSizing: "border-box",
       }}
     >
       <TitleBar title={"Add Lab"} />

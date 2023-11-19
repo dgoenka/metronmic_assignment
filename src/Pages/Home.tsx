@@ -7,9 +7,10 @@ type HomeProps = Record<string, unknown>;
 const Home: React.FC<HomeProps> = () => {
   return (
     <div
-      className={
-        "w-100 h-100 d-flex text-center align-items-center justify-content-center"
-      }
+      className="flex-fill d-flex text-center align-items-center justify-content-center"
+      style={{
+        boxSizing: "border-box",
+      }}
     >
       <Title>Welcome to Lab Management System</Title>
     </div>
