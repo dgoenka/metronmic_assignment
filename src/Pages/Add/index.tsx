@@ -18,6 +18,7 @@ const Add: React.FC<AddProps> = () => {
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
+        marginBottom: "10px",
       }}
     >
       <TitleBar title={"Add Lab"} />

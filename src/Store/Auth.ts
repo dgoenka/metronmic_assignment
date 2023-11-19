@@ -16,7 +16,7 @@ type LogoutResponse = {
   result: string;
 };
 
-type LoginRequest = {
+export type LoginRequest = {
   username: string;
   password: string;
 };
@@ -35,8 +35,8 @@ const getMeFx = createEffect<MeRequest, MeResponse, Error>(
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        username: "kminchelle",
-        password: "0lelplR",
+        // username: "kminchelle",
+        // password: "0lelplR",
         ...meRequest,
       }),
     });
@@ -74,6 +74,10 @@ export const $me = createStore<Partial<MeResponse>>({
     requestStatus: undefined,
   }))
   .on(getMeFx.pending, (state, pending) => ({
+    ...state,
+    requestStatus: pending ? "PENDING" : undefined,
+  }))
+  .on(login.pending, (state, pending) => ({
     ...state,
     requestStatus: pending ? "PENDING" : undefined,
   }))

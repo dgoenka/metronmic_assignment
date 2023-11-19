@@ -10,7 +10,7 @@ const TitleBar: React.FC<TitleBarProps> = ({ title }) => (
     style={{
       width: "100%",
       height: "min-content",
-      padding: 18,
+      padding: 16,
       background: "white",
       borderBottom: "1px rgba(145, 158, 171, 0.16) solid",
       justifyContent: "flex-start",

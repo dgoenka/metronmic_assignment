@@ -53,20 +53,20 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           </Menu.Item>
 
           <Menu.Item
-            key="/register"
-            icon={<UserAddOutlined />}
-            disabled={!!meStore.id}
-            className={meStore.id ? "d-none" : ""}
-          >
-            <Link to="/register">Register</Link>
-          </Menu.Item>
-          <Menu.Item
             key="/login"
             icon={<LoginOutlined />}
             disabled={!!meStore.id}
             className={meStore.id ? "d-none" : ""}
           >
             <Link to="/login">Login</Link>
+          </Menu.Item>
+          <Menu.Item
+            key="/register"
+            icon={<UserAddOutlined />}
+            disabled={!!meStore.id}
+            className={meStore.id ? "d-none" : ""}
+          >
+            <Link to="/register">Register</Link>
           </Menu.Item>
         </Menu>
         <div style={{ flex: 1 }}>{children}</div>

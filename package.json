@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "antd": "^5.11.2",
     "bootstrap": "^5.3.2",
     "effector": "^22.8.7",

@@ -13,7 +13,13 @@ const Register: React.FC<RegisterProps> = () => {
   if (user.id) {
     return <Navigate to={"/"} replace />;
   }
-  return <div>Register</div>;
+  return (
+    <div
+      className={"w-100 h-100 d-flex align-items-center justify-content-center"}
+    >
+      Register
+    </div>
+  );
 };
 
 export default Register;

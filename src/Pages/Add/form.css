@@ -8,7 +8,18 @@ input {
   padding: 0rem 0.5rem;
   outline: none;
   font-size: 0.75rem;
-  resize: none;
+  resize: none !important;
+}
+
+legend {
+  width: 100% !important;
+  height: auto;
+  padding: 5px 16px !important;
+  background: #f9fafb;
+  color: #253a64;
+  font-size: 0.75rem !important;
+  font-weight: 700;
+  word-wrap: break-word;
 }
 textarea::placeholder,
 input::placeholder {
@@ -20,4 +31,11 @@ label {
   font-size: 0.75rem;
   display: flex !important;
   flex-direction: column;
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0px 10px 10px 10px;
 }

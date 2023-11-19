@@ -1,10 +1,4 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  Routes,
-  BrowserRouter,
-} from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
@@ -13,7 +7,7 @@ import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute.tsx";
 import FullscreenLoading from "./Components/FullscreenLoading.tsx";
 import { useStore } from "effector-react";
 import { $me } from "./Store/Auth.ts";
-import Index from "./Pages/Add";
+import Add from "./Pages/Add/index.tsx";
 import Logout from "./Pages/Logout.tsx";
 
 function App() {
@@ -36,7 +30,7 @@ function App() {
               path="/add"
               element={
                 <ProtectedRoute>
-                  <Index />
+                  <Add />
                 </ProtectedRoute>
               }
             />
