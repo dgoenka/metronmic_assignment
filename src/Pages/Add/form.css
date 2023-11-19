@@ -1,0 +1,23 @@
+select,
+textarea,
+input {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  color: rgba(145, 158, 171, 1);
+  background: #fff;
+  padding: 0rem 0.5rem;
+  outline: none;
+  font-size: 0.75rem;
+  resize: none;
+}
+textarea::placeholder,
+input::placeholder {
+  color: rgba(145, 158, 171, 0.32);
+}
+
+label {
+  color: rgba(145, 158, 171, 0.32);
+  font-size: 0.75rem;
+  display: flex !important;
+  flex-direction: column;
+}
