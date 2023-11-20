@@ -13,6 +13,7 @@ type LoginProps = {
 };
 
 const Login: React.FC<LoginProps> = () => {
+  // DEMO CODE - WE SHOULD USE CREDENTIAL MANAGER IN A PRODUCTION ENVIRONMENT, NOT LOCAL STORAGE TO SAFEGUARD AGAINST XSS
   const [username, setUsername] = useLocalStorage<string>("username", "");
   const [password, setPassword] = useLocalStorage<string>("password", "");
 

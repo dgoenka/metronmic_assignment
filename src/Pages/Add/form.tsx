@@ -1,12 +1,25 @@
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import "./form.css";
+import { Lab, saveLab } from "../../Store/Lab.ts";
+import { useNavigate } from "react-router-dom";
+
 export default function AddLabForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const onSubmit = (data: unknown) => console.log(data);
+  } = useForm<Lab>();
+  const navigate = useNavigate();
+  const onSubmit: SubmitHandler<Lab> = async (data: FieldValues) => {
+    console.log(JSON.stringify(data, null, 2));
+    await saveLab(data as unknown as Lab);
+    if (confirm("Lab Added! Continue Adding?")) {
+      navigate("/");
+    } else {
+      navigate("/add/lab");
+    }
+  };
+
   console.log(errors);
 
   return (
