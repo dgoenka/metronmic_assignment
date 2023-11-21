@@ -31,7 +31,7 @@ export const logMeOut = createEvent<LogoutRequest>();
 
 const getMeFx = createEffect<MeRequest, MeResponse, Error>(
   async (meRequest) => {
-    const req = await fetch("http://localhost:3000/auth/me", {
+    const req = await fetch(`${import.meta.env.VITE_BASE_API_URL}/auth/me`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -46,7 +46,7 @@ const getMeFx = createEffect<MeRequest, MeResponse, Error>(
 
 const login = createEffect<LoginRequest, MeResponse, Error>(
   async (loginRequest) => {
-    const req = await fetch("http://localhost:3000/auth/login", {
+    const req = await fetch(`${import.meta.env.VITE_BASE_API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(loginRequest),
@@ -57,11 +57,14 @@ const login = createEffect<LoginRequest, MeResponse, Error>(
 
 const logout = createEffect<LogoutRequest, LogoutResponse, Error>(
   async (logoutRequest) => {
-    const req = await fetch("http://localhost:3000/auth/logout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(logoutRequest),
-    });
+    const req = await fetch(
+      `${import.meta.env.VITE_BASE_API_URL}/auth/logout`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(logoutRequest),
+      },
+    );
     return req.json();
   },
 );

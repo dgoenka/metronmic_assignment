@@ -16,7 +16,7 @@ export type Lab = {
 import { createEffect } from "effector";
 
 export const saveLab = createEffect<Lab, Lab, Error>(async (lab) => {
-  const req = await fetch("http://localhost:3000/lab/add", {
+  const req = await fetch(`${import.meta.env.VITE_BASE_API_URL}/lab/add`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
