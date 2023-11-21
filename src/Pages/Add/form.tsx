@@ -1,9 +1,24 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import "./form.css";
-import { Lab, saveLab } from "../../Store/Lab.ts";
+import {
+  fetchProviderGroup,
+  fetchProviderUnit,
+  Lab,
+  providerGroup,
+  providerUnit,
+  saveLab,
+} from "../../Store/Lab.ts";
 import { useNavigate } from "react-router-dom";
+import { useStore } from "effector-react";
+import { useEffect } from "react";
 
-export default function AddLabForm() {
+const AddLabForm: React.FC = () => {
+  const providerGroupStore = useStore(providerGroup);
+  const providerUnitStore = useStore(providerUnit);
+
+  useEffect(fetchProviderGroup, []);
+  useEffect(fetchProviderUnit, []);
+
   const {
     register,
     handleSubmit,
@@ -19,8 +34,6 @@ export default function AddLabForm() {
       navigate("/add/lab");
     }
   };
-
-  console.log(errors);
 
   return (
     <form
@@ -48,15 +61,17 @@ export default function AddLabForm() {
               placeholder="Provider Group"
               {...register("providerGroup", { required: true })}
             >
-              <option value="Alabama">Alabama</option>
-              <option value="Alaska">Alaska</option>
+              {providerGroupStore.map((group) => (
+                <option value={group}>{group}</option>
+              ))}
             </select>
           </label>
           <label htmlFor={"providerUnit"}>
             Provider Unit{" "}
             <select {...register("providerUnit", { required: true })}>
-              <option value="Alabama">Alabama</option>
-              <option value="Alaska">Alaska</option>
+              {providerUnitStore.map((group) => (
+                <option value={group}>{group}</option>
+              ))}
             </select>
           </label>
           <label htmlFor={"address"}>
@@ -602,4 +617,6 @@ export default function AddLabForm() {
       />
     </form>
   );
-}
+};
+
+export default AddLabForm;
